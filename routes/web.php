@@ -15,6 +15,8 @@ Route::middleware('guest')->group(function () {
 
     Route::get('/register', [AuthController::class, 'showRegister'])->name('register');
     Route::post('/register',[AuthController::class, 'register']);
+
+    Route::get('/forgot-password', [AuthController::class, 'showForgot'])->name('password.request');
 });
 
 // Protected routes (authenticated only)

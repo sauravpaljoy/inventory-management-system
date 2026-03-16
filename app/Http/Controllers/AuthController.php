@@ -67,6 +67,15 @@ class AuthController extends Controller
         return redirect()->route('dashboard')->with('success', 'Account created successfully! Welcome, ' . $user->name . '!');
     }
 
+    // Show forgot password form
+    public function showForgot()
+    {
+        if (Auth::check()) {
+            return redirect()->route('dashboard');
+        }
+        return view('auth.forgot', ['standalone' => true]);
+    }
+
     // Logout
     public function logout(Request $request)
     {
