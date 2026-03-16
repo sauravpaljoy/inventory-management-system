@@ -2,7 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
-
+use App\Http\Controllers\UserController;
 // Landing page
 Route::get('/', function () {
     return view('welcome');
@@ -21,9 +21,7 @@ Route::middleware('guest')->group(function () {
 
 // Protected routes (authenticated only)
 Route::middleware('auth')->group(function () {
-    Route::get('/dashboard', function () {
-        return view('dashboard');
-    })->name('dashboard');
+    Route::get('/dashboard',[UserController::class, 'dashboard'])->name('dashboard');
 
     Route::post('/logout',  [AuthController::class, 'logout'])->name('logout');
 });
