@@ -15,7 +15,7 @@ class AuthController extends Controller
         if (Auth::check()) {
             return redirect()->route('dashboard');
         }
-        return view('auth.login');
+        return view('auth.login', ['standalone' => true]);
     }
 
     // Handle login
@@ -44,7 +44,7 @@ class AuthController extends Controller
         if (Auth::check()) {
             return redirect()->route('dashboard');
         }
-        return view('auth.register');
+        return view('auth.register', ['standalone' => true]);
     }
 
     // Handle registration

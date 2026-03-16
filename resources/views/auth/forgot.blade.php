@@ -3,7 +3,7 @@
     @section('content')
 @endif
 
-@include('auth.partials.register')
+@include('auth.partials.forgot')
 
 @if(isset($standalone))
     @endsection
