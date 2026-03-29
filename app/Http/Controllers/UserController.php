@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 
@@ -18,5 +19,11 @@ class UserController extends Controller
 
         // Default to standard user dashboard for 'user' type or any other
         return view('dashboard');
+    }
+
+    public function index()
+    {
+        $users = User::latest()->get();
+        return view('users.index', compact('users'));
     }
 }

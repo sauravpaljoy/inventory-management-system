@@ -76,8 +76,9 @@
         </a>
         <div class="navbar-menu">
             <a href="{{ route('dashboard') }}"><i class="fas fa-gauge"></i> Dashboard</a>
-            <a href="#"><i class="fas fa-box"></i> Products</a>
-            <a href="#"><i class="fas fa-tags"></i> Categories</a>
+            <a href="{{ route('products') }}"><i class="fas fa-box"></i> Products</a>
+            <a href="{{ route('categories') }}"><i class="fas fa-tags"></i> Categories</a>
+            <a href="{{ route('users') }}"><i class="fas fa-users"></i> Users</a>
             <form action="{{ route('logout') }}" method="POST" style="display:inline;">
                 @csrf
                 <button type="submit" class="btn-logout" style="background:none;border:none;cursor:pointer;color:#f87171;font-size:0.9rem;font-weight:500;padding:0.4rem 0.8rem;border-radius:8px;border:1px solid rgba(239,68,68,0.3);transition:all 0.2s;">
